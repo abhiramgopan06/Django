@@ -1,21 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Students.css' %}">
 </head>
 <body>
     <h1>Students</h1>
     <a href="../add/">Add student</a><br><br>
-
-    <div>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <select name="course" id="">
+            <option value="" disabled selected>--Select course--</option>
+            <option value="">All</option>
+            {% for course in courses %}
+                <option value="{{course.id}}">{{course.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="filter">
+    </form>
+    <div class="Students">
         {% for student in students %}
-            <div>
+            <div class="student">
                 <h1>{{student.name}}</h1>
                 <h2>{{student.course}}</h2>
                 <h3>{{student.sid}}</h3>
-                <a href="../student/{{student.sid}}/">
+                <a href="../student/{{student.id}}/">
                     <button>View Details</button>
                 </a>
             </div>
