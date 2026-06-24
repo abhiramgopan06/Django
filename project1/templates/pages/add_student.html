@@ -15,8 +15,14 @@
                 <td><input type="text"placeholder="Enter name" name="name"></td>
             </tr>
             <tr>
-                <td><label for="">Course:</label></td>
-                <td><input type="text"placeholder="Enter course" name="course"></td>
+                <td>
+                    <select name="course" id="">
+                        <option value="" disabled selected>--Select course--</option>
+                        {% for course in courses %}
+                            <option value="{{course.id}}" >{{course.name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td><label for="">sid:</label></td>
