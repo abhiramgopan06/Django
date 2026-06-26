@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/Students.css' %}">
+    <link rel="stylesheet" href="{% static 'css/students.css' %}">
 </head>
 <body>
     <h1>Students</h1>
     <a href="../add/">Add student</a><br><br>
-    
+    <br>
+    <br>
+    <a href="/logout">logout</a>
+    <br>
+    <br>
     <form action="" method="post">
         {% csrf_token %}
         <select name="course" id="">

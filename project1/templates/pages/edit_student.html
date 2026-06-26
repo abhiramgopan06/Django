@@ -16,11 +16,13 @@
             </tr>
             <tr>
                 <td>
+                    <label for="">course:
                     <select name="course" id="">
                         <option value="" disabled selected>--Select course--</option>
                         {% for course in courses %}
                             <option value="{{course.id}}" {% if student.course == course %} selected {% endif %}>{{course.name}}</option>
                         {% endfor %}
+                        </label>
                     </select>
                 </td>
             </tr>
